@@ -12,7 +12,6 @@ const storageKey = 'posts';
 class MainScene extends Component {
     constructor(props){
         super(props);
-        this.props = props;
         this.handleSubmit = this.handleSubmit.bind(this);
         this.state = {
             post: {value: ''},
