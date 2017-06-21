@@ -1,8 +1,6 @@
 extends: 
   - "standard-react"
 env:
-  jest: true
-  node: true
   browser: true
 plugins:
   - "react"

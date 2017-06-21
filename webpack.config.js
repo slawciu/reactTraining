@@ -11,7 +11,7 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, './public/js'),
         filename: '[name].js',
-        publicPath: '/public/js'
+        publicPath: '/public/'
     },
 
     module: {
@@ -20,12 +20,6 @@ module.exports = {
             loader: 'babel-loader',
             include: [
                 path.resolve(__dirname, 'src/')
-            ]
-        },
-        {
-            test: /\.(png|svg|jpg|gif)$/,
-            use: [
-                'file-loader'
             ]
         },
         {
