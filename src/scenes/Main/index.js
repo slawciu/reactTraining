@@ -27,7 +27,7 @@ class MainScene extends Component {
     handleSubmit(post) {
         const { posts } = this.state;
         posts.push(post); 
-        saveArray(storageKey, posts);
+        saveArray(storageKey, posts.concat(posts, post));
         this.setState({value: ''});
     }
 

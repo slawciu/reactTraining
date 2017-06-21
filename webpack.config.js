@@ -30,17 +30,8 @@ module.exports = {
             }
         }]
     },
-
     resolve: {
         extensions: ['.js']
     },
-
-    plugins: [
-        new webpack.optimize.CommonsChunkPlugin({
-            name: 'vendor',
-            filename: 'vendor.js'
-        })
-    ],
-
     devtool: 'source-map'
 };
