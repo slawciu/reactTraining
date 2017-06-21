@@ -4,7 +4,6 @@ import moment from 'moment'
 import renderHtml from './../../helpers/imageEmbeder'
 import { isEmpty } from 'lodash'; 
 import classNames from 'classnames';
-import './Post.less';
 
 import userImageFallback from './../../img/avatar_2x.png';
 class Post extends Component {

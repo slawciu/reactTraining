@@ -7,7 +7,7 @@
     "build": "npm run cleanBuild && webpack --progress --color --display-error-details && npm run copyStaticFiles",
     "dev": "npm run cleanBuild && npm run copyStaticFiles && webpack --watch",
     "watchDebug": "webpack --progress --color --watch --display-error-details",
-    "copyStaticFiles": "cp -R src/img/ public/ && cp src/index.html public/",
+    "copyStaticFiles": "cp -R src/img/ public/ && cp src/index.html public/ && cp src/styles.css public/",
     "cleanBuild": "rm -rf public/*"
   },
   "author": "",

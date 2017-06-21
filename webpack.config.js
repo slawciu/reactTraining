@@ -23,16 +23,6 @@ module.exports = {
             ]
         },
         {
-            test: /\.less$/,
-            loaders: [
-                'style-loader',
-                {
-                    loader: 'css-loader', options: { importLoaders: 1 }
-                },
-                'less-loader'
-            ]
-        },
-        {
             test: /\.(png|svg|jpg|gif)$/,
             use: [
                 'file-loader'

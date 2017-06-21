@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import './TextArea.less';
-
 class TextArea extends Component {
 
     constructor(props) {
