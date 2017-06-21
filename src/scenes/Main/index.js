@@ -15,7 +15,7 @@ class MainScene extends Component {
         this.props = props;
         this.handleSubmit = this.handleSubmit.bind(this);
         this.state = {
-            postValue:'',
+            post: {value: ''},
             posts: []
         }
     }
@@ -33,14 +33,14 @@ class MainScene extends Component {
     }
 
     render () {
-        const { postValue, posts } = this.state;
+        const { post, posts } = this.state;
         return (
             <div className='container-fluid'>
                 <div className='row'>
                     <Posts posts={posts} />
                 </div>
                 <div className='row'>
-                    <TextArea handleSubmit={this.handleSubmit} postValue={postValue} />
+                    <TextArea onHandleSubmit={this.handleSubmit} />
                 </div>
             </div>
         )

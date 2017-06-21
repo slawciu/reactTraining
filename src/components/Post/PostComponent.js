@@ -1,26 +1,31 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import moment from 'moment'
+import renderHtml from './../../helpers/imageEmbeder'
+import { isEmpty } from 'lodash'; 
 import './Post.less';
 
+import userImageFallback from './../../img/avatar_2x.png';
 const Post = props => {
+    const { children, date, image, username } = props;
+    const userImage = isEmpty(image) ? userImageFallback : image;
+    const userName = isEmpty(username) ? 'Anonymous' : username;
     return (
         <div className='row'>
             <div className='col-sm-1'>
                 <div className='thumbnail'>
                     <img
                         className='img-responsive user-photo'
-                        src='https://ssl.gstatic.com/accounts/ui/avatar_2x.png'
+                        src={userImage}
                     /></div>
             </div>
-            <div className='col-sm-5'>
+            <div className='post-column'>
                 <div className='panel panel-default'>
                     <div className='panel-heading'>
-                        <strong>myusername</strong>
-                        <span className='text-muted'>commented 5 days ago</span>
+                        <strong>{userName}</strong>
+                        <span className='text-muted'> { moment(date).fromNow()}</span>
                     </div>
-                    <div className='panel-body'>
-                        { props.children }
-                    </div>
+                    <div className='panel-body' dangerouslySetInnerHTML={renderHtml(children)} />
                 </div>
             </div>
         </div>
@@ -28,7 +33,10 @@ const Post = props => {
 };
 
 Post.propTypes = {
-    children: PropTypes.node
+    children: PropTypes.node,
+    date: PropTypes.number,
+    image: PropTypes.string,
+    username: PropTypes.string
 };
 
 export default Post;

@@ -4,14 +4,21 @@ import { Post } from './../Post/';
 const Posts = props => {
     const { posts } = props;
     const postRender = [];
-    posts.forEach(function(post) {
-        postRender.push(<Post>{post}</Post>)
+    posts.forEach(function (post, index) {
+        postRender.push(<Post
+            date={post.date}
+            image={post.image}
+            key={index}
+            username={post.username}
+        >
+            {post.value}
+        </Post>)
     }, this);
     return (
         <div className='container'>
             <div className='row'>
                 <div className='col-sm-12'>
-                    <h3>User Comment Example</h3>
+                    <h3>Comments</h3>
                 </div>
             </div>
             {postRender}
@@ -20,7 +27,12 @@ const Posts = props => {
 };
 
 Posts.propTypes = {
-    posts: PropTypes.arrayOf(PropTypes.string)
+    posts: PropTypes.arrayOf(PropTypes.shape({
+        date: PropTypes.number,
+        username: PropTypes.string,
+        image: PropTypes.string,
+        value: PropTypes.string
+    }))
 };
 
 export default Posts;

@@ -1,7 +1,6 @@
-const saveArray = (key, data) => localStorage.setItem(key, data);
+const saveArray = (key, data) => localStorage.setItem(key, JSON.stringify(data));
 const loadArray = key => {
-    const stringData = localStorage.getItem(key);
-    return stringData ? stringData.split(',') : stringData;
+    return JSON.parse(localStorage.getItem(key));    
 };
 
 export { saveArray, loadArray };
