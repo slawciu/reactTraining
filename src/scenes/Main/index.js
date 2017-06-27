@@ -1,36 +1,19 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import {
-    Posts,
-    TextArea
+    Post,
 } from '../../components/';
 
-import { loadArray, saveArray } from './../../helpers/localStorageHelpers';
+import image from  '../../img/avatar_2x.png';
 
 const storageKey = 'posts';
 
 class MainScene extends Component {
     constructor(props){
         super(props);
-        this.handleSubmit = this.handleSubmit.bind(this);
         this.state = {
-            post: {value: ''},
-            posts: []
+            post: {value: ''}
         }
-    }
-
-    componentDidMount() {
-        const posts = loadArray(storageKey);
-        posts && this.setState({posts: posts});
-    }
-
-    handleSubmit(post) {
-        const { posts } = this.state;
-        const postArray = posts.concat(post);
-        saveArray(storageKey, postArray);
-        this.setState({
-            posts: postArray,
-            value: '' });
     }
 
     render () {
@@ -38,10 +21,13 @@ class MainScene extends Component {
         return (
             <div className='container-fluid'>
                 <div className='row'>
-                    <Posts posts={posts} />
-                </div>
-                <div className='row'>
-                    <TextArea onHandleSubmit={this.handleSubmit} />
+                    <Post
+                        date={Date.now()}
+                        image={image}
+                        username='Your name'
+                    >
+                        Some comment
+                    </Post>
                 </div>
             </div>
         )
