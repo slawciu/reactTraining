@@ -4,4 +4,4 @@ import ReactDOM from 'react-dom';
 import App from './app';
 import MainScene from './Main/';
 
-ReactDOM.render(<MainScene />, document.getElementById('app'));
+ReactDOM.render(<App><MainScene /></App>, document.getElementById('app'));
