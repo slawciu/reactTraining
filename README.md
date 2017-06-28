@@ -1,3 +1,5 @@
 # Simple react training
 
-npm run dev - build project and watch for changes
+npm run build - build project
+
+npm run dev - build and watch for changes (project is rebuild faster as it rebuilds only changed scripts)
