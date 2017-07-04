@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Comment from './Comment'
-
+import {ListGroupItem, ListGroup} from 'react-bootstrap'
 export default class Comments extends Component {
     render () {
         var comments = this.props.comments.map(function(comment){
@@ -8,7 +8,7 @@ export default class Comments extends Component {
                                 <Comment key={comment.id} comment={comment}/>);
                     } );
 
-        return <div>{comments}</div>;
+        return <ListGroup>{comments}</ListGroup>;
             
     }
 }

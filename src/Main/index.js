@@ -14,10 +14,10 @@ class MainScene extends Component {
 
         this.state = {
             comments: [
-                {id: 1, author:'author 1', message: 'message 1', dateAdded:new Date(), imagePath: 'https://vignette3.wikia.nocookie.net/nonsensopedia/images/f/fe/Kulfon.jpg'},
-                {id: 2, author:'author 2', message: 'message 2', dateAdded:new Date(),imagePath: ''},
-                {id: 3, author:'author 3', message: 'message 3', dateAdded:new Date(),imagePath: 'https://vignette3.wikia.nocookie.net/nonsensopedia/images/f/fe/Kulfon.jpg'},
-                {id: 4, author:'author 4', message: 'message 4', dateAdded:new Date(),imagePath: ''}
+                {id: 1, isVisible: true, author:'author 1', message: 'message 1', dateAdded:new Date(), imagePath: 'https://vignette3.wikia.nocookie.net/nonsensopedia/images/f/fe/Kulfon.jpg'},
+                {id: 2, isVisible: true, author:'author 2', message: 'message 2', dateAdded:new Date(),imagePath: ''},
+                {id: 3, isVisible: true, author:'author 3', message: 'message 3', dateAdded:new Date(),imagePath: 'https://vignette3.wikia.nocookie.net/nonsensopedia/images/f/fe/Kulfon.jpg'},
+                {id: 4, isVisible: true, author:'author 4', message: 'message 4', dateAdded:new Date(),imagePath: ''}
                 ]
         }
     }
